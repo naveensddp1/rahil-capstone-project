@@ -28,6 +28,7 @@ stages:
     outs:
     - data/processed
     - models/vectorizer.pkl
+      cache: false
 
   model_building:
     cmd: python src/model/model_building.py
@@ -36,6 +37,7 @@ stages:
     - src/model/model_building.py
     outs:
     - models/model.pkl
+       cache: false
 
   model_evaluation:
     cmd: python src/model/model_evaluation.py
@@ -46,6 +48,7 @@ stages:
     - reports/metrics.json
     outs:
     - reports/experiment_info.json  # Add the model_info.json file as an output
+        cache: false
 
   model_registration:
     cmd: python src/model/register_model.py
