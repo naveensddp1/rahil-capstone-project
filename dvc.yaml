@@ -15,7 +15,7 @@ stages:
     - src/data/data_preprocessing.py
     outs:
     - data/interim:
-        cache: false
+        # cache: false
 
   feature_engineering:
     cmd: python src/features/feature_engineering.py
@@ -27,7 +27,7 @@ stages:
     outs:
     - data/processed
     - models/vectorizer.pkl:
-        cache: false
+        # cache: false
 
   model_building:
     cmd: python src/model/model_building.py
@@ -36,7 +36,7 @@ stages:
     - src/model/model_building.py
     outs:
     - models/model.pkl:
-        cache: false
+        # cache: false
 
   model_evaluation:
     cmd: python src/model/model_evaluation.py
@@ -47,7 +47,7 @@ stages:
     - reports/metrics.json
     outs:
     - reports/experiment_info.json:
-        cache: false
+        # cache: false
 
   model_registration:
     cmd: python src/model/register_model.py
