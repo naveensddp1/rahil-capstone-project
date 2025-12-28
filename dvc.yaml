@@ -9,6 +9,7 @@ stages:
     - data_ingestion.test_size
     outs:
     - data/raw
+        cache: false
 
   data_preprocessing:
     cmd: python src/data/data_preprocessing.py
@@ -17,6 +18,7 @@ stages:
     - src/data/data_preprocessing.py
     outs:
     - data/interim
+       cache: false
 
   feature_engineering:
     cmd: python src/features/feature_engineering.py
