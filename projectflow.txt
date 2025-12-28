@@ -42,25 +42,30 @@
 27. Add s3 as dvc remote storage - dvc remote add -d myremote s3://<bucket-name>
 
 
-(atlas) PS C:\Users\Admin\rahil-capstone-project> dvc push                                                                                                                                                                 
-Collecting                                                                                                                                                                                      |13.0 [00:00,  167entry/s] 
-Pushing                                                                                                                                                                                                                    
-Everything is up to date.                                                                                                                                                                                                  
-(atlas) PS C:\Users\Admin\rahil-capstone-project> dvc repro
-Stage 'data_ingestion' didn't change, skipping
-Stage 'data_preprocessing' didn't change, skipping
-Stage 'feature_engineering' didn't change, skipping
-Stage 'model_building' didn't change, skipping
-Stage 'model_evaluation' didn't change, skipping
-Stage 'model_registration' didn't change, skipping
-Data and pipelines are up to date.
-(atlas) PS C:\Users\Admin\rahil-capstone-project> 
+                (atlas) PS C:\Users\Admin\rahil-capstone-project> dvc push                                                                                                                                                                 
+                Collecting                                                                                                                                                                                      |13.0 [00:00,  167entry/s] 
+                Pushing                                                                                                                                                                                                                    
+                Everything is up to date.                                                                                                                                                                                                  
+                (atlas) PS C:\Users\Admin\rahil-capstone-project> dvc repro
+                Stage 'data_ingestion' didn't change, skipping
+                Stage 'data_preprocessing' didn't change, skipping
+                Stage 'feature_engineering' didn't change, skipping
+                Stage 'model_building' didn't change, skipping
+                Stage 'model_evaluation' didn't change, skipping
+                Stage 'model_registration' didn't change, skipping
+                Data and pipelines are up to date.
+                (atlas) PS C:\Users\Admin\rahil-capstone-project> 
 
 
-(atlas) PS C:\Users\Admin\rahil-capstone-project> aws s3 ls s3://rahil-mlops/files/md5/08/
-File association not found for extension .py
-2025-12-27 19:34:38      41417 b626abcd32cee97fe029fc8ff549f8
+                (atlas) PS C:\Users\Admin\rahil-capstone-project> aws s3 ls s3://rahil-mlops/files/md5/08/
+                File association not found for extension .py
+                2025-12-27 19:34:38      41417 b626abcd32cee97fe029fc8ff549f8
 
+
+                (atlas) PS C:\Users\Admin\rahil-capstone-project> dvc commit
+                (atlas) PS C:\Users\Admin\rahil-capstone-project> dvc status
+                Data and pipelines are up to date.
+                (atlas) PS C:\Users\Admin\rahil-capstone-project> 
 
 
 
