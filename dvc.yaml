@@ -1,3 +1,5 @@
+# updated dvc.yaml
+
 stages:
   data_ingestion:
     cmd: python src/data/data_ingestion.py
@@ -14,7 +16,7 @@ stages:
     - data/raw
     - src/data/data_preprocessing.py
     outs:
-    - data/interim:
+    - data/interim
 
   feature_engineering:
     cmd: python src/features/feature_engineering.py
@@ -25,16 +27,15 @@ stages:
     - feature_engineering.max_features
     outs:
     - data/processed
-    - models/vectorizer.pkl:
-  
+    - models/vectorizer.pkl
+
   model_building:
     cmd: python src/model/model_building.py
     deps:
     - data/processed
     - src/model/model_building.py
     outs:
-    - models/model.pkl:
-
+    - models/model.pkl
 
   model_evaluation:
     cmd: python src/model/model_evaluation.py
@@ -44,8 +45,7 @@ stages:
     metrics:
     - reports/metrics.json
     outs:
-    - reports/experiment_info.json:
-   
+    - reports/experiment_info.json  # Add the model_info.json file as an output
 
   model_registration:
     cmd: python src/model/register_model.py
